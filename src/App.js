@@ -44,7 +44,7 @@ class App extends React.Component {
     else if (event.type=="submit"){
       streetName = event.target.querySelector("#street-data-list-input").value;
 
-      // If no street chosen, do nothing
+      // If no street chosen, do nothing!
       if(streetName=="")
       {
         return;
