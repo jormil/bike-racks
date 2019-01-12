@@ -11,5 +11,5 @@ Clone this repo, then
  * npm install
  * npm run watch
  * npm run dev
- * Use latest chrome and navigate to http://localhost:8090
+ * Use latest chrome or firefox and navigate to http://localhost:8090
 
