@@ -84,7 +84,7 @@ class App extends React.Component {
               <StreetList streets={this.state.streets} changeStreet={this.changeStreet}/>
             </div>
           </header>
-        <RackList racks={this.state.racks}/>
+        <RackList racks={this.state.racks} currentStreet={this.state.currentStreet}/>
         <Map racks={this.state.racks}/>
       </div>
     );
