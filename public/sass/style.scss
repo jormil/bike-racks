@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,300,400,700|Raleway:300,400,700|Rubik:300,400,500,700|Thasadith:400,700');
+
+$color__primary-font: rgb(50,50,50);
+$color__accent: slateblue;
+$color_highlight: darkturquoise;
+
+@mixin boxshadow {
+  box-shadow: 2px 5px 5px rgba(0,0,0,.3);
+}
+
+.rack-list.hidden {
+  display: none;
+}
+
+.map-container {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+
+  z-index: -1;
+}
+
+#map{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+
+}
+
+html {
+  font-family: Rubik;
+  font-weight: 300;
+  color:$color__primary-font;
+}
+
+header {
+  width:100%;
+  font-size: 1rem;
+  position:fixed;
+  top:0;
+  left:0;
+  background-color: white;
+  box-shadow: 0 5px 5px rgba(0,0,0,.3);
+}
+
+h1 {
+  font-family: Rubik;
+  font-weight: 300;
+}
+
+.h1-bike {
+  color:$color__accent;
+
+  display: inline-block;
+  margin-left:.25em;
+}
+
+
+select, input{
+
+  height:2rem;
+  font-size: 1rem;
+  width:100%;
+margin:3px;
+  box-sizing: border-box;
+
+  border:1px solid $color__accent;
+  border-radius:5px;
+}
+
+[type="submit"]{
+  display: inline-block;
+  width:auto;
+
+  background-color: $color__accent;
+  color:white;
+  border:none;
+  border-radius:5px;
+
+  &:active {
+    background-color: $color_highlight;
+  }
+}
+
+
+
+
+.rack-list {
+  display: none;
+}
+
+@media screen and (min-width:600px)
+{
+
+  header {
+    font-size:1rem;
+    width:auto;
+    padding:1rem;
+
+    box-shadow:none;
+    background-color: transparent;
+  }
+
+  h1 {
+
+    padding:.1em;
+
+    background-color: rgba(255,255,255,.3);
+
+    font-size: 5vw;
+    margin-top:0;
+    margin-bottom: .2em;
+
+    border-radius: .5rem;
+  }
+
+
+  .chooser {
+
+    width:50%;
+
+  }
+
+  .chooser {
+    background-color: white;
+
+    padding:.5rem;
+    border-radius: .5rem;
+
+    @include boxshadow;
+  }
+  .rack-list {
+    display: block;
+    position: fixed;
+    bottom:0;
+    right:.5rem;
+    background-color: rgba(255,255,255,.8);
+
+    border:10px solid rgba(255,255,255,.8);
+    border-radius: .5rem;
+
+    max-height:30vh;
+    overflow-y: scroll;
+
+    @include boxshadow;
+  }
+}
