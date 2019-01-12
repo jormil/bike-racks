@@ -11,13 +11,11 @@ class MapTools {
 
       this.mapboxgl = mapboxgl;
 
-      // markers of racks of current street 
+      // markers of racks of current street
       this.markers = [];
 
       this.geocodingClient = mbxGeocoding({ accessToken: 'pk.eyJ1Ijoiam9yZGFubWlsbGVyIiwiYSI6ImNqcW41bTZxZjdlc3I0MnBkcWtrc2xlYW8ifQ.SBX1hj-2nItwHZatTC72Dw' });
 
-        //This binding
-        this.markRacks = this.markRacks.bind(this);
     }
 
     // create map and return it for dom
@@ -66,7 +64,10 @@ class MapTools {
     }
 
     // Create marks for racks, fly to that location
-    markRacks(racks) {
+    refreshRacks(racks) {
+
+      // Wipe all markers
+      this.resetMarkers();
 
       racks.map(rack=>{
 

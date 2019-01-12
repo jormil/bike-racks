@@ -15,16 +15,9 @@ class Map extends React.Component {
     const map = mapTools.initializeMap();
   }
 
-  // Update markers and fly to correct spot
-  componentDidUpdate(){
-
-    // nullify old markers
-    mapTools.resetMarkers();
-    // Go through racks and create new markers, fly to bounding box
-    mapTools.markRacks(this.props.racks);
-  }
-
   render() {
+    // Go through racks and create new markers, fly to bounding box
+    mapTools.refreshRacks(this.props.racks);
 
     return (
       <div className="map-container">

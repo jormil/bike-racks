@@ -2,7 +2,9 @@ import React from 'react';
 
 // List of streets
 class StreetList extends React.Component {
+
   render() {
+
     return (
 
       // onSubmit is used for datalist

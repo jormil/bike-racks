@@ -21,11 +21,19 @@ class App extends React.Component {
 
     this.state = {
       streets:this.props.streets,
+      currentStreet:null,
       racks:[],
     }
 
     // binding 'this'
     this.changeStreet=this.changeStreet.bind(this);
+  }
+
+  // Make sure state is synced with server
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      streets:nextProps.streets
+    });
   }
 
   // Choosing a street
@@ -60,6 +68,7 @@ class App extends React.Component {
          // Update racks
          this.setState({
             racks:racks,
+            currentStreet:streetName,
          });
 
     })
