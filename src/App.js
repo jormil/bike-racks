@@ -20,7 +20,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      streets:this.props.streets,
+      loading:true,
+      streets:[],
       currentStreet:null,
       racks:[],
     }
@@ -29,11 +30,18 @@ class App extends React.Component {
     this.changeStreet=this.changeStreet.bind(this);
   }
 
-  // Make sure state is synced with server
-  componentWillReceiveProps(nextProps){
-    this.setState({
-      streets:nextProps.streets
-    });
+  // Get data from API
+  componentDidMount() {
+    axios.get('/streets')
+       .then(resp => {
+
+      this.setState({
+        loading:false,
+        streets:resp.data
+      });
+
+    })
+    .catch(console.error);
   }
 
   // Choosing a street
@@ -76,18 +84,25 @@ class App extends React.Component {
   }
 
   render(){
-    return (
-        <div>
-          <header>
-            <h1>Bike Rack Locator<FontAwesomeIcon icon="bicycle" className="h1-bike"/></h1>
-            <div className="chooser">
-              <StreetList streets={this.state.streets} changeStreet={this.changeStreet}/>
-            </div>
-          </header>
-        <RackList racks={this.state.racks} currentStreet={this.state.currentStreet}/>
-        <Map racks={this.state.racks}/>
-      </div>
-    );
+    if (this.state.loading == true)
+    {
+      // Show message as content is fetched 
+      return <div className="loading">Loading...</div>;
+    }
+    else {
+      return (
+          <div>
+            <header>
+              <h1>Bike Rack Locator<FontAwesomeIcon icon="bicycle" className="h1-bike"/></h1>
+              <div className="chooser">
+                <StreetList streets={this.state.streets} changeStreet={this.changeStreet}/>
+              </div>
+            </header>
+          <RackList racks={this.state.racks} currentStreet={this.state.currentStreet}/>
+          <Map racks={this.state.racks}/>
+        </div>
+      );
+    }
   }
 }
 
