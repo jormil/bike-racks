@@ -80,6 +80,7 @@ class MapTools {
           .send()
           .then(response => {
 
+            // Get coordinates 
             const xr = response.body.features[0].center[0];
             const yr = response.body.features[0].center[1];
 

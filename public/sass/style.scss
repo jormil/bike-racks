@@ -1,17 +1,26 @@
+/*
+Variables
+Mixins
+Map
+Mobile:Header
+Mobile:Rack List
+Desktop:Header
+Desktop:Rack List
+*/
+
+// Variables
 @import url('https://fonts.googleapis.com/css?family=Nunito:200,300,400,700|Raleway:300,400,700|Rubik:300,400,500,700|Thasadith:400,700');
 
 $color__primary-font: rgb(50,50,50);
 $color__accent: slateblue;
 $color_highlight: darkturquoise;
 
+// Mixins
 @mixin boxshadow {
   box-shadow: 2px 5px 5px rgba(0,0,0,.3);
 }
 
-.rack-list.hidden {
-  display: none;
-}
-
+// Map
 .map-container {
   position: fixed;
   top:0;
@@ -29,6 +38,8 @@ $color_highlight: darkturquoise;
     width: 100%;
 
 }
+
+// Mobile:Header
 
 html {
   font-family: Rubik;
@@ -58,13 +69,12 @@ h1 {
   margin-left:.25em;
 }
 
-
 select, input{
 
   height:2rem;
   font-size: 1rem;
   width:100%;
-margin:3px;
+  margin:3px;
   box-sizing: border-box;
 
   border:1px solid $color__accent;
@@ -85,15 +95,21 @@ margin:3px;
   }
 }
 
+// Mobile:Rack List
 
-
+.rack-list.hidden {
+  display: none;
+}
 
 .rack-list {
   display: none;
 }
 
+// Desktop
 @media screen and (min-width:600px)
 {
+
+  // Desktop:Header
 
   header {
     font-size:1rem;
@@ -107,31 +123,25 @@ margin:3px;
   h1 {
 
     padding:.1em;
-
     background-color: rgba(255,255,255,.3);
-
     font-size: 5vw;
     margin-top:0;
     margin-bottom: .2em;
-
     border-radius: .5rem;
   }
 
-
   .chooser {
-
     width:50%;
-
   }
 
   .chooser {
     background-color: white;
-
     padding:.5rem;
     border-radius: .5rem;
-
     @include boxshadow;
   }
+
+  // Desktop: Rack List
   .rack-list {
     display: block;
     position: fixed;

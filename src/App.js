@@ -25,7 +25,7 @@ class App extends React.Component {
       racks:[],
     }
 
-    // binding 'this'
+    // binding 'this' to changeStreet handler
     this.changeStreet=this.changeStreet.bind(this);
   }
 

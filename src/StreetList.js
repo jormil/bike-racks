@@ -19,6 +19,7 @@ class StreetList extends React.Component {
           })}
         </select>
 
+        {/* Datalist is not supported by Safari */}
         <label htmlFor="street-data-list-input">Or search:</label>
         <input list="street-data-list" className="street-list" id="street-data-list-input"></input>
         <datalist id="street-data-list">
