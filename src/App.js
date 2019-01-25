@@ -84,17 +84,15 @@ class App extends React.Component {
   }
 
   render(){
-    if (this.state.loading == true)
-    {
-      // Show message as content is fetched 
-      return <div className="loading">Loading...</div>;
-    }
-    else {
+
+    // use class + CSS to indicate loading
+    const chooserClasses = `chooser ${this.state.loading ? 'loading' : 'loaded'}`;
+
       return (
           <div>
             <header>
               <h1>Bike Rack Locator<FontAwesomeIcon icon="bicycle" className="h1-bike"/></h1>
-              <div className="chooser">
+              <div className={chooserClasses}>
                 <StreetList streets={this.state.streets} changeStreet={this.changeStreet}/>
               </div>
             </header>
@@ -102,7 +100,7 @@ class App extends React.Component {
           <Map racks={this.state.racks}/>
         </div>
       );
-    }
+    //}
   }
 }
 

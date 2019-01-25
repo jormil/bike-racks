@@ -41,6 +41,16 @@ $color_highlight: darkturquoise;
 
 // Mobile:Header
 
+.loading::before {
+  content:"Loading...";
+  font-size: 2rem;
+
+}
+
+.loading form {
+  visibility: hidden;
+}
+
 html {
   font-family: Rubik;
   font-weight: 300;

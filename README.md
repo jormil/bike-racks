@@ -13,8 +13,4 @@ Clone this repo, then
  * npm install
  * npm run watch (to compile updates in src folder)
  * npm run dev
-
  * Use latest Chrome or Firefox and navigate to http://localhost:8090
-
-
-
